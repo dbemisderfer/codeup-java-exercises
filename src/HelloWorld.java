@@ -12,7 +12,7 @@ public class HelloWorld {
 //        System.out.println("Enter your full name: ");
 //        String userInput = scanner.nextLine(); //must use .nextLine (rather than .next) for any inputs with whitespace in between words!!!!!!!!!
 //
-//        System.out.format("Nice to meet you, %s!", userInput); //must use .format (rather than .print) for anything with %s
+//        System.out.format("Nice to meet you, %s!", userInput); //must use .format or .printf (rather than .print) for anything with %s
 
 
 
@@ -87,13 +87,24 @@ public class HelloWorld {
 //            i++;
 //        }
 
-        for(int i = 1; i <= 10; i++) { // <--+
-            if(i % 2 == 1) { //              |
-                continue; // ----------------+
-            }
-            System.out.println(i);
-        }
+//        for(int i = 1; i <= 10; i++) { // <--+
+//            if(i % 2 == 1) { //              |
+//                continue; // ----------------+
+//            }
+//            System.out.println(i);
+//        }
 
+//        boolean boolNotFalse = true;
+//        boolean boolNotTrue = false;
+//        boolean notTrueOrNotFalse = ((boolNotFalse || boolNotTrue) || (boolNotTrue && boolNotFalse)) && ((boolNotFalse || boolNotTrue) && (boolNotTrue && boolNotFalse)) || ((boolNotFalse || boolNotTrue) || (boolNotTrue && boolNotFalse)) && ((boolNotFalse || boolNotTrue) || (boolNotTrue && boolNotFalse));
+//        System.out.println(notTrueOrNotFalse);
+
+
+//        boolean iLikeDoughnuts = true; // of course
+//        boolean dayIsSunday = false; // I get doughnuts most Sundays
+//        double time = 8.5;  // before 9:30
+//        boolean krispyKreme = (iLikeDoughnuts && dayIsSunday && time < 9.5);
+//        System.out.println(krispyKreme);
     }
 }
 

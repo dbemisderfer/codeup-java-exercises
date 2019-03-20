@@ -7,13 +7,13 @@ public class ConsoleExercises {
 //////////////////////////////////////
 ///////////// Console IO /////////////
 //////////////////////////////////////
-        double pi = 3.14159; // use %.2f for two decimal places
-        System.out.format("The value of pi is approximately %.2f", pi);
+//        double pi = 3.14159; // use %.2f for two decimal places
+//        System.out.format("The value of pi is approximately %f %n", pi); //can use %n in place of \n for new lines
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Please enter a number: ");
 //        int userInputNumber = scanner.nextInt();
-//        System.out.format("Your number was %s.", userInputNumber);
+//        System.out.format("Your number was %d.", userInputNumber); //use %d for integers
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Please enter three separate words:");
@@ -23,19 +23,31 @@ public class ConsoleExercises {
 //        String userInput2 = scanner.next();
 ////        System.out.println("Enter the third word: ");
 //        String userInput3 = scanner.next();
-//        System.out.println(userInput1 + "\n" + userInput2 + "\n" + userInput3);
+////        System.out.println(userInput1 + "\n" + userInput2 + "\n" + userInput3);
+//        System.out.println(userInput1);
+//        System.out.println(userInput2);
+//        System.out.println(userInput3);
+/////////////////////////// !!!! IMPORTANT !!!! /////////////////////
+//        String random = scanner.nextLine(); // necessary if you're not commenting out previous lines
+///////////////////////////////////////////////////////////
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Enter a brief sentence: ");
 ////        String userSentence = scanner.next(); // Doesn't work with more than one word
 //        String userSentence = scanner.nextLine();
-//        System.out.format("Your sentence was: %s", userSentence);
+//        System.out.printf("Your sentence was: %s", userSentence);
+////        System.out.format("Here is the random variable: %s%n", random);
 
 
 
-//        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 ///////////////// Attempt as using strings ////////////
-//        System.out.println("Please enter separate length and width values:");
+        System.out.println("Please enter length:");
+        double userLength = new Double(scanner.nextLine());
+        System.out.println("Please enter width:");
+        double userWidth = scanner.nextDouble();
+
+
 //        String userLength = scanner.next();
 //        String userWidth = scanner.nextLine();
 //        int numLength = (int) userLength;
@@ -56,10 +68,14 @@ public class ConsoleExercises {
 //        double userWidth = scanner.nextDouble();
 ///////////////////////////////////////////////////////
 
-//        System.out.format("You entered %s and %s\n", userLength, userWidth);
-//
+        System.out.format("You entered %s and %f\n", userLength, userWidth);
+
 //        System.out.println("The area is: " + (userLength*userWidth));
 //        System.out.println("The perimeter is: " + (2*userLength + 2*userWidth));
+
+        System.out.printf("The area is %.0f square feet.%n", userLength*userWidth);
+        System.out.printf("The perimeter is %.0f. ", 2*userLength + 2*userWidth);
+
 
 
     }
