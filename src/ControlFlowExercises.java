@@ -202,42 +202,53 @@ public class ControlFlowExercises {
 //        Bonus
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
+        boolean confirmation = true;
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Please enter your grade (w/o percentage) here: ");
+            int userNumberGrade = scanner.nextInt();
+//            System.out.println();
+//            System.out.println(userNumberGrade);
+            System.out.println();
+            if ((userNumberGrade >= 99) && (userNumberGrade <= 100)) {
+                System.out.println("A+");
+            } else if ((userNumberGrade >= 94) && (userNumberGrade <= 98)) {
+                System.out.println("A");
+            } else if ((userNumberGrade >= 90) && (userNumberGrade <= 93)) {
+                System.out.println("A-");
+            } else if ((userNumberGrade >= 88) && (userNumberGrade <= 89)) {
+                System.out.println("B+");
+            } else if ((userNumberGrade >= 84) && (userNumberGrade <= 87)) {
+                System.out.println("B");
+            } else if ((userNumberGrade >= 80) && (userNumberGrade <= 83)) {
+                System.out.println("B-");
+            } else if ((userNumberGrade >= 78) && (userNumberGrade <= 79)) {
+                System.out.println("C+");
+            } else if ((userNumberGrade >= 74) && (userNumberGrade <= 77)) {
+                System.out.println("C");
+            } else if ((userNumberGrade >= 70) && (userNumberGrade <= 73)) {
+                System.out.println("C-");
+            } else if ((userNumberGrade >= 68) && (userNumberGrade <= 69)) {
+                System.out.println("D+");
+            } else if ((userNumberGrade >= 64) && (userNumberGrade <= 67)) {
+                System.out.println("D");
+            } else if ((userNumberGrade >= 60) && (userNumberGrade <= 63)) {
+                System.out.println("D-");
+            } else if ((userNumberGrade >= 0) && (userNumberGrade <= 59)) {
+                System.out.println("F");
+            } else {
+                System.out.println("Incorrect entry. Please try again.");
+            }
+            System.out.println();
+            System.out.print("Would you like to continue? [y/n]");
+            System.out.println();
+            String userResponse = scanner.next();
+            System.out.println("\n");
+            if (userResponse.equals("n")) {
+                confirmation = false;
+            }
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter your grade (w/o percentage) here: ");
-        int userNumberGrade = scanner.nextInt();
-        System.out.println();
-        System.out.println(userNumberGrade);
-        System.out.println();
-        if ((userNumberGrade >= 99) && (userNumberGrade <= 100)) {
-            System.out.println("A+");
-        } else if ((userNumberGrade >= 94) && (userNumberGrade <= 98)) {
-            System.out.println("A");
-        } else if ((userNumberGrade >= 90) && (userNumberGrade <= 93)) {
-            System.out.println("A-");
-        } else if ((userNumberGrade >= 88) && (userNumberGrade <= 89)) {
-            System.out.println("B+");
-        } else if ((userNumberGrade >= 84) && (userNumberGrade <= 87)) {
-            System.out.println("B");
-        } else if ((userNumberGrade >= 80) && (userNumberGrade <= 83)) {
-            System.out.println("B-");
-        } else if ((userNumberGrade >= 78) && (userNumberGrade <= 79)) {
-            System.out.println("C+");
-        } else if ((userNumberGrade >= 74) && (userNumberGrade <= 77)) {
-            System.out.println("C");
-        } else if ((userNumberGrade >= 70) && (userNumberGrade <= 73)) {
-            System.out.println("C-");
-        } else if ((userNumberGrade >= 68) && (userNumberGrade <= 69)) {
-            System.out.println("D+");
-        } else if ((userNumberGrade >= 64) && (userNumberGrade <= 67)) {
-            System.out.println("D");
-        } else if ((userNumberGrade >= 60) && (userNumberGrade <= 63)) {
-            System.out.println("D-");
-        } else if ((userNumberGrade >= 0) && (userNumberGrade <= 59)) {
-            System.out.println("F");
-        } else {
-            System.out.println("Incorrect entry. Please try again.");
-        }
+        } while (confirmation);
 
     }
 }
