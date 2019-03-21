@@ -125,7 +125,6 @@ public class ControlFlowExercises {
         do {
             System.out.print("What number would you like to go up to? ");
             int userNumber = scanner.nextInt();
-            int i = 1;
 //        System.out.println(userNumber);
             System.out.println();
             System.out.println("Here is your table!\n");
@@ -135,10 +134,10 @@ public class ControlFlowExercises {
 //
 //                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
 //            }
-            for (; i <= userNumber; i++) {
+            for (int i = 1; i <= userNumber; i++) {
                 int numberSquared = i*i;
                 int numberCubed = i*i*i;
-                System.out.format(i + "      | %s       | %s%n", numberSquared, numberCubed);
+                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
             }
             System.out.println("\n");
             System.out.println("Would you like to continue? [y/n] ");
