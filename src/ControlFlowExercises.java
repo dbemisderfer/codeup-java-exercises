@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
@@ -81,6 +83,21 @@ public class ControlFlowExercises {
 //        For multiples of three print “Fizz” instead of the number
 //        For the multiples of five print “Buzz”.
 //        For numbers which are multiples of both three and five print “FizzBuzz”.
+
+//        for (int i = 1; i <= 100; i++) {
+//            if (i % 15 == 0) {
+//                System.out.println("fizzbuzz");
+//            } else if (i % 3 == 0) {
+//                System.out.println("fizz");
+//            } else if (i % 5 == 0) {
+//                System.out.println("buzz");
+//            } else {
+//                System.out.println(i);
+//            }
+//        }
+
+
+
 //        Display a table of powers.
 //
 //                Prompt the user to enter an integer.
@@ -95,13 +112,42 @@ public class ControlFlowExercises {
 //
 //        Here is your table!
 //
-//                number | squared | cubed
-//                ------ | ------- | -----
-//                1      | 1       | 1
+//        number | squared | cubed
+//        ------ | ------- | -----
+//        1      | 1       | 1
 //        2      | 4       | 8
 //        3      | 9       | 27
 //        4      | 16      | 64
 //        5      | 25      | 125
+
+        Scanner scanner = new Scanner(System.in);
+        boolean confirmation = true;
+        do {
+            System.out.print("What number would you like to go up to? ");
+            int userNumber = scanner.nextInt();
+//        System.out.println(userNumber);
+            System.out.println();
+            System.out.println("Here is your table!\n");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for (int i = 1; i <= userNumber; i++) {
+
+                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
+            }
+            System.out.println("\n");
+            System.out.println("Would you like to continue? [y/n] ");
+            String random = scanner.nextLine();
+            String userInput = scanner.next();
+            if (userInput.equals("n")) {
+                confirmation = false;
+            }
+        } while (confirmation);
+
+
+
+
+
+
 //        Convert given number grades into letter grades.
 //
 //                Prompt the user for a numerical grade from 0 to 100.
