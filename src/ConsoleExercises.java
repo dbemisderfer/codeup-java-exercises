@@ -40,12 +40,12 @@ public class ConsoleExercises {
 
 
 
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
 ///////////////// Attempt as using strings ////////////
-        System.out.println("Please enter length:");
-        double userLength = new Double(scanner.nextLine());
-        System.out.println("Please enter width:");
-        double userWidth = scanner.nextDouble();
+//        System.out.println("Please enter length:");
+//        double userLength = new Double(scanner.nextLine());
+//        System.out.println("Please enter width:");
+//        double userWidth = scanner.nextDouble();
 
 
 //        String userLength = scanner.next();
@@ -68,13 +68,14 @@ public class ConsoleExercises {
 //        double userWidth = scanner.nextDouble();
 ///////////////////////////////////////////////////////
 
-        System.out.format("You entered %s and %f\n", userLength, userWidth);
+//        System.out.format("You entered %s and %f\n", userLength, userWidth);
+//
+////        System.out.println("The area is: " + (userLength*userWidth));
+////        System.out.println("The perimeter is: " + (2*userLength + 2*userWidth));
+//
+//        System.out.printf("The area is %.0f square feet.%n", userLength*userWidth);
+//        System.out.printf("The perimeter is %.0f. ", 2*userLength + 2*userWidth);
 
-//        System.out.println("The area is: " + (userLength*userWidth));
-//        System.out.println("The perimeter is: " + (2*userLength + 2*userWidth));
-
-        System.out.printf("The area is %.0f square feet.%n", userLength*userWidth);
-        System.out.printf("The perimeter is %.0f. ", 2*userLength + 2*userWidth);
 
 
 
