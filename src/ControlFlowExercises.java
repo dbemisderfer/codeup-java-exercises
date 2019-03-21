@@ -120,28 +120,28 @@ public class ControlFlowExercises {
 //        4      | 16      | 64
 //        5      | 25      | 125
 
-        Scanner scanner = new Scanner(System.in);
-        boolean confirmation = true;
-        do {
-            System.out.print("What number would you like to go up to? ");
-            int userNumber = scanner.nextInt();
-//        System.out.println(userNumber);
-            System.out.println();
-            System.out.println("Here is your table!\n");
-            System.out.println("number | squared | cubed");
-            System.out.println("------ | ------- | -----");
-            for (int i = 1; i <= userNumber; i++) {
-
-                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
-            }
-            System.out.println("\n");
-            System.out.println("Would you like to continue? [y/n] ");
-            String random = scanner.nextLine();
-            String userInput = scanner.next();
-            if (userInput.equals("n")) {
-                confirmation = false;
-            }
-        } while (confirmation);
+//        Scanner scanner = new Scanner(System.in);
+//        boolean confirmation = true;
+//        do {
+//            System.out.print("What number would you like to go up to? ");
+//            int userNumber = scanner.nextInt();
+////        System.out.println(userNumber);
+//            System.out.println();
+//            System.out.println("Here is your table!\n");
+//            System.out.println("number | squared | cubed");
+//            System.out.println("------ | ------- | -----");
+//            for (int i = 1; i <= userNumber; i++) {
+//
+//                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
+//            }
+//            System.out.println("\n");
+//            System.out.println("Would you like to continue? [y/n] ");
+//            String random = scanner.nextLine();
+//            String userInput = scanner.next();
+//            if (userInput.equals("n")) {
+//                confirmation = false;
+//            }
+//        } while (confirmation);
 
 
 
@@ -162,6 +162,38 @@ public class ControlFlowExercises {
 //        C : 79 - 67
 //        D : 66 - 60
 //        F : 59 - 0
+        boolean confirmation = true;
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter a numerical grade from 0 to 100: ");
+            int userNumberGrade = scanner.nextInt();
+            System.out.println();
+//        System.out.println(userNumberGrade);
+            if ((userNumberGrade >= 88) && (userNumberGrade <= 100)) {
+                System.out.println("A");
+            } else if ((userNumberGrade >= 80) && (userNumberGrade <= 87)) {
+                System.out.println("B");
+            } else if ((userNumberGrade >= 67) && (userNumberGrade <= 79)) {
+                System.out.println("C");
+            } else if ((userNumberGrade >= 60) && (userNumberGrade <= 66)) {
+                System.out.println("D");
+            } else if ((userNumberGrade >= 0) && (userNumberGrade <= 59)) {
+                System.out.println("F");
+            } else {
+                System.out.println("Incorrect entry. Please try again.");
+            }
+            System.out.println();
+            System.out.println("Would you like to continue? [y/n]");
+            String random = scanner.nextLine();
+            String userInput = scanner.next();
+            System.out.println();
+            if (userInput.equals("n")) {
+                confirmation = false;
+            }
+        } while (confirmation);
+
+
+
 //        Bonus
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
