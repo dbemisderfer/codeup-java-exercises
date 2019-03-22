@@ -24,7 +24,8 @@ public class ControlFlowExercises {
 //
 //        Do While
 //
-//        Create a do-while loop that will count by 2's starting with 0 and ending at 100. Follow each number with a new line.
+//        Create a do-while loop that will count by 2's starting with 0 and ending
+//        at 100. Follow each number with a new line.
 
 //        int i = 0;
 //        do {
@@ -40,7 +41,8 @@ public class ControlFlowExercises {
 //            i -= 5;
 //        } while (i >= -10);
 
-//        Create a do-while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
+//        Create a do-while loop that starts at 2, and displays the number squared
+//        on each line while the number is less than 1,000,000. Output should equal:
 //
 //        2
 //        4
@@ -53,6 +55,17 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //            i *= i;
 //        } while (i < 1000000);
+
+///////////  Instructor example ////////////////
+//        int j = 0;
+//        long i = 2;
+//        do {
+//            System.out.println(i);
+//            i *= i;
+//            j++;
+////        } while (i < 1000000);
+//        } while (j < 7);
+////////////////////////////////////////////////
 
 
 //        For
@@ -77,7 +90,9 @@ public class ControlFlowExercises {
 
 //        Fizzbuzz
 //
-//        One of the most common interview questions for entry-level programmers is the FizzBuzz test. Developed by Imran Ghory, the test is designed to test basic looping and conditional logic skills.
+//        One of the most common interview questions for entry-level programmers is
+//        the FizzBuzz test. Developed by Imran Ghory, the test is designed to test
+//        basic looping and conditional logic skills.
 //
 //                Write a program that prints the numbers from 1 to 100.
 //        For multiples of three print “Fizz” instead of the number
@@ -119,7 +134,12 @@ public class ControlFlowExercises {
 //        3      | 9       | 27
 //        4      | 16      | 64
 //        5      | 25      | 125
-
+///////////////////////////////////////////////////////////////////////////////////////
+//
+        // IMPORTANT NOTE: Highlight, right-click, Refactor, Rename (to change all instances of
+        // a variable!!!!!!!!!
+//
+///////////////////////////////////////////////////////////////////////////////////////
 //        Scanner scanner = new Scanner(System.in);
 //        boolean confirmation = true;
 //        do {
@@ -135,22 +155,56 @@ public class ControlFlowExercises {
 ////                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
 ////            }
 //            for (int i = 1; i <= userNumber; i++) {
-//                int numberSquared = i*i;
-//                int numberCubed = i*i*i;
-//                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
+////                int numberSquared = i*i;
+////                int numberCubed = i*i*i;
+////                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
+//                System.out.printf("%-6d | %-7d | %d%n", i, i*i, i*i*i);
 //            }
 //            System.out.println("\n");
 //            System.out.println("Would you like to continue? [y/n] ");
-//            String random = scanner.nextLine();
-//            String userInput = scanner.next();
+////            String random = scanner.nextLine();
+//            String userInput = scanner.next(); // MUST BE .next and NOT .nextLine
 //            if (userInput.equals("n")) {
 //                confirmation = false;
 //            }
 //        } while (confirmation);
 
 
+//        //////////////////////////////////////////////////////////
+//
+//        INSTRUCTOR SOLUTION HERE  ////////////////////////////////
+//
+//        //////////////////////////////////////////////////////////
 
 
+//        String userInput;
+//        do {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.print("What number would you like to go up to? ");
+//            int userNumber = scanner.nextInt();
+////        System.out.println(userNumber);
+//            System.out.println();
+//            System.out.println("Here is your table!\n");
+//            System.out.println("number | squared | cubed");
+//            System.out.println("------ | ------- | -----");
+////            for (int i = 1; i <= userNumber; i++) {
+////
+////                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
+////            }
+//            for (int i = 1; i <= userNumber; i++) {
+////                int numberSquared = i*i;
+////                int numberCubed = i*i*i;
+////                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
+//                System.out.printf("%-6d | %-7d | %d%n", i, i*i, i*i*i);
+//            }
+//            System.out.println("\n");
+//            System.out.println("Would you like to continue? [y/n] ");
+////            String random = scanner.nextLine();
+//            userInput = scanner.next(); // MUST BE .next and NOT .nextLine
+////            if (userInput.equals("n")) {
+////                confirmation = false;
+////            }
+//        } while (userInput.equals("y") || userInput.equals("yes"));
 
 
 //        Convert given number grades into letter grades.
@@ -202,53 +256,53 @@ public class ControlFlowExercises {
 //        Bonus
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
-        boolean confirmation = true;
-        do {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Please enter your grade (w/o percentage) here: ");
-            int userNumberGrade = scanner.nextInt();
+//        boolean confirmation = true;
+//        do {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.print("Please enter your grade (w/o percentage) here: ");
+//            int userNumberGrade = scanner.nextInt();
+////            System.out.println();
+////            System.out.println(userNumberGrade);
 //            System.out.println();
-//            System.out.println(userNumberGrade);
-            System.out.println();
-            if ((userNumberGrade >= 99) && (userNumberGrade <= 100)) {
-                System.out.println("Congratulations, you scored an A+!!!");
-            } else if ((userNumberGrade >= 94) && (userNumberGrade <= 98)) {
-                System.out.println("Great job, you got an A!!");
-            } else if ((userNumberGrade >= 90) && (userNumberGrade <= 93)) {
-                System.out.println("Nice work, that's an A-!");
-            } else if ((userNumberGrade >= 88) && (userNumberGrade <= 89)) {
-                System.out.println("Nice, that's a B+.");
-            } else if ((userNumberGrade >= 84) && (userNumberGrade <= 87)) {
-                System.out.println("Not bad, that's a B.");
-            } else if ((userNumberGrade >= 80) && (userNumberGrade <= 83)) {
-                System.out.println("Not too bad, that's a B-.");
-            } else if ((userNumberGrade >= 78) && (userNumberGrade <= 79)) {
-                System.out.println("Well, you at least got a C+.");
-            } else if ((userNumberGrade >= 74) && (userNumberGrade <= 77)) {
-                System.out.println("Hey, it could be worse...you got a C.");
-            } else if ((userNumberGrade >= 70) && (userNumberGrade <= 73)) {
-                System.out.println("You barely passed with a C-.");
-            } else if ((userNumberGrade >= 68) && (userNumberGrade <= 69)) {
-                System.out.println("Yikes, you got a D+!");
-            } else if ((userNumberGrade >= 64) && (userNumberGrade <= 67)) {
-                System.out.println("So sorry...you got a D.");
-            } else if ((userNumberGrade >= 60) && (userNumberGrade <= 63)) {
-                System.out.println("Ouch! You got a D-.");
-            } else if ((userNumberGrade >= 0) && (userNumberGrade <= 59)) {
-                System.out.println("Woah...dude. You failed with an F.");
-            } else {
-                System.out.println("Incorrect entry. Please try again.");
-            }
-            System.out.println();
-            System.out.print("Would you like to continue? [y/n]");
-            System.out.println();
-            String userResponse = scanner.next();
-            System.out.println("\n");
-            if (userResponse.equalsIgnoreCase("n")) {
-                confirmation = false;
-            }
-
-        } while (confirmation);
+//            if ((userNumberGrade >= 99) && (userNumberGrade <= 100)) {
+//                System.out.println("Congratulations, you scored an A+!!!");
+//            } else if ((userNumberGrade >= 94) && (userNumberGrade <= 98)) {
+//                System.out.println("Great job, you got an A!!");
+//            } else if ((userNumberGrade >= 90) && (userNumberGrade <= 93)) {
+//                System.out.println("Nice work, that's an A-!");
+//            } else if ((userNumberGrade >= 88) && (userNumberGrade <= 89)) {
+//                System.out.println("Nice, that's a B+.");
+//            } else if ((userNumberGrade >= 84) && (userNumberGrade <= 87)) {
+//                System.out.println("Not bad, that's a B.");
+//            } else if ((userNumberGrade >= 80) && (userNumberGrade <= 83)) {
+//                System.out.println("Not too bad, that's a B-.");
+//            } else if ((userNumberGrade >= 78) && (userNumberGrade <= 79)) {
+//                System.out.println("Well, you at least got a C+.");
+//            } else if ((userNumberGrade >= 74) && (userNumberGrade <= 77)) {
+//                System.out.println("Hey, it could be worse...you got a C.");
+//            } else if ((userNumberGrade >= 70) && (userNumberGrade <= 73)) {
+//                System.out.println("You barely passed with a C-.");
+//            } else if ((userNumberGrade >= 68) && (userNumberGrade <= 69)) {
+//                System.out.println("Yikes, you got a D+!");
+//            } else if ((userNumberGrade >= 64) && (userNumberGrade <= 67)) {
+//                System.out.println("So sorry...you got a D.");
+//            } else if ((userNumberGrade >= 60) && (userNumberGrade <= 63)) {
+//                System.out.println("Ouch! You got a D-.");
+//            } else if ((userNumberGrade >= 0) && (userNumberGrade <= 59)) {
+//                System.out.println("Woah...dude. You failed with an F.");
+//            } else {
+//                System.out.println("Incorrect entry. Please try again.");
+//            }
+//            System.out.println();
+//            System.out.print("Would you like to continue? [y/n]");
+//            System.out.println();
+//            String userResponse = scanner.next();
+//            System.out.println("\n");
+//            if (userResponse.equalsIgnoreCase("n")) {
+//                confirmation = false;
+//            }
+//
+//        } while (confirmation);
 
     }
 }
