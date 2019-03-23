@@ -74,9 +74,27 @@ public class MethodsExercises {
 
 
 
+    public static int factorial(int num) {
+        long result = 1;
+        for (int i = 1; i <= num; i++) {
+
+            result *= i;
+//            System.out.println(i);
+//            System.out.printf("%d! = %d  = %d", i, i, i);
+        }
+    }
+
+
+
+
+
 
 /////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+///////////// MAIN MAIN MAIN MAIN //////////////////////
+///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 
 
@@ -110,29 +128,38 @@ public class MethodsExercises {
 //    3. Factorial of a Number    /////////
 ///////////////////////////////////////////
 //        boolean keepGoing = true;
-//        do {
-//            Scanner scanner = new Scanner(System.in);
-//            System.out.println("Please enter a number between 1 and 10: ");
-//            int num = scanner.nextInt();
-//            if (num < 1 || num > 10) {
-//
-//            };
-//            long result = 1;
-////        System.out.println(num);
-//            for (int i = 1; i <= num; i++) {
-//
-//                result *= i;
-////            System.out.println(i);
-////            System.out.printf("%d! = %d  = %d", i, i, i);
-//            }
-//            System.out.println(result);
-//            System.out.println();
-//            System.out.println("Would you like to keep going? [y/n]");
-//            String userResponse = scanner.next();
-//            if (userResponse.equalsIgnoreCase("n")) {
-//                keepGoing = false;
-//            }
-//        } while (keepGoing);
+////        do {
+////            Scanner scanner = new Scanner(System.in);
+//////            System.out.println("Please enter a number between 1 and 10: ");
+//////            int num = scanner.nextInt(getInteger(1, 10));
+//////            int num = scanner.nextInt();
+//////            if (num < 1 || num > 10) {
+//////
+//////            };
+//////            long result = 1;
+////////        System.out.println(num);
+//////            for (int i = 1; i <= num; i++) {
+//////
+//////                result *= i;
+////////            System.out.println(i);
+////////            System.out.printf("%d! = %d  = %d", i, i, i);
+//////            }
+////            System.out.println(factorial(getInteger(1,10)));
+////            System.out.println(result);
+////            System.out.println();
+////            System.out.println("Would you like to keep going? [y/n]");
+////            String userResponse = scanner.next();
+////            if (userResponse.equalsIgnoreCase("n")) {
+////                keepGoing = false;
+////            }
+////        } while (keepGoing);
+        Scanner scnr = new Scanner(System.in);
+        String userContinue;
+        do {
+            System.out.println(factorial(getInteger(1,10)));
+            System.out.println("Do you wish to continue?");
+            userContinue = scnr.next();
+        } while (userContinue.equalsIgnoreCase("yes"));
 
 
 ///////////////////////////////////////////
