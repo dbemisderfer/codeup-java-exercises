@@ -140,34 +140,7 @@ public class ControlFlowExercises {
         // a variable!!!!!!!!!
 //
 ///////////////////////////////////////////////////////////////////////////////////////
-//        Scanner scanner = new Scanner(System.in);
-//        boolean confirmation = true;
-//        do {
-//            System.out.print("What number would you like to go up to? ");
-//            int userNumber = scanner.nextInt();
-////        System.out.println(userNumber);
-//            System.out.println();
-//            System.out.println("Here is your table!\n");
-//            System.out.println("number | squared | cubed");
-//            System.out.println("------ | ------- | -----");
-////            for (int i = 1; i <= userNumber; i++) {
-////
-////                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
-////            }
-//            for (int i = 1; i <= userNumber; i++) {
-////                int numberSquared = i*i;
-////                int numberCubed = i*i*i;
-////                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
-//                System.out.printf("%-6d | %-7d | %d%n", i, i*i, i*i*i);
-//            }
-//            System.out.println("\n");
-//            System.out.println("Would you like to continue? [y/n] ");
-////            String random = scanner.nextLine();
-//            String userInput = scanner.next(); // MUST BE .next and NOT .nextLine
-//            if (userInput.equals("n")) {
-//                confirmation = false;
-//            }
-//        } while (confirmation);
+
 
 
 //        //////////////////////////////////////////////////////////
@@ -177,34 +150,34 @@ public class ControlFlowExercises {
 //        //////////////////////////////////////////////////////////
 
 
-//        String userInput;
-//        do {
-//            Scanner scanner = new Scanner(System.in);
-//            System.out.print("What number would you like to go up to? ");
-//            int userNumber = scanner.nextInt();
-////        System.out.println(userNumber);
-//            System.out.println();
-//            System.out.println("Here is your table!\n");
-//            System.out.println("number | squared | cubed");
-//            System.out.println("------ | ------- | -----");
-////            for (int i = 1; i <= userNumber; i++) {
-////
-////                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
-////            }
+        String userInput;
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("What number would you like to go up to? ");
+            int userNumber = scanner.nextInt();
+//        System.out.println(userNumber);
+            System.out.println();
+            System.out.println("Here is your table!\n");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
 //            for (int i = 1; i <= userNumber; i++) {
-////                int numberSquared = i*i;
-////                int numberCubed = i*i*i;
-////                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
-//                System.out.printf("%-6d | %-7d | %d%n", i, i*i, i*i*i);
+//
+//                System.out.println("" + i + "      | " + i*i + "       | " + i*i*i);
 //            }
-//            System.out.println("\n");
-//            System.out.println("Would you like to continue? [y/n] ");
-////            String random = scanner.nextLine();
-//            userInput = scanner.next(); // MUST BE .next and NOT .nextLine
-////            if (userInput.equals("n")) {
-////                confirmation = false;
-////            }
-//        } while (userInput.equals("y") || userInput.equals("yes"));
+            for (int i = 1; i <= userNumber; i++) {
+//                int numberSquared = i*i;
+//                int numberCubed = i*i*i;
+//                System.out.format("%-6d | %-7d | %-6d%n", i, numberSquared, numberCubed);
+                System.out.printf("%-6d | %-7d | %d%n", i, i*i, i*i*i);
+            }
+            System.out.println("\n");
+            System.out.println("Would you like to continue? [y/n] ");
+//            String random = scanner.nextLine();
+            userInput = scanner.next(); // MUST BE .next and NOT .nextLine
+//            if (userInput.equals("n")) {
+//                confirmation = false;
+//            }
+        } while (userInput.equals("y") || userInput.equals("yes"));
 
 
 //        Convert given number grades into letter grades.

@@ -18,6 +18,7 @@ public class Bob {
                 System.out.println();
                 System.out.println("Fine. Be that way!");
             } else if (userInput.equalsIgnoreCase("x")) {
+                System.out.println("Later, dude.");
                 keepGoing = false;
             } else {
                 System.out.println("Whatever.\n");
@@ -25,5 +26,6 @@ public class Bob {
             System.out.println();
             System.out.println("Please continue the conversation (or enter 'x' to exit): ");
         } while (keepGoing);
+        System.out.println("Bob is going to his room.");
     }
 }
