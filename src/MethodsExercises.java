@@ -3,101 +3,6 @@ import java.lang.Math;
 
 public class MethodsExercises {
 
-///////////////////////////////////////////
-//    1. Basic Arithmetic    //////////////
-///////////////////////////////////////////
-
-    public static int addition(int num1, int num2) {
-        return num1 + num2;
-    }
-
-    public static int subtraction(int num1, int num2) {
-        return num1 - num2;
-    }
-
-    public static int multiplication(int num1, int num2) {
-        return num1 * num2;
-    }
-
-    public static int division(int num1, int num2) {
-        return num1 / num2;
-    }
-
-    public static int modulus(int num1, int num2) {
-        return num1 % num2;
-    }
-
-///////////////////////////////////////////
-//    Random Stuff I Found    /////////////
-///////////////////////////////////////////
-
-    public static void count(int n) {
-        if (n <= 0) {
-            System.out.println("All done!");
-            return;
-        }
-        System.out.println(n);
-        count(n - 1);
-    }
-
-    public static long getPower(int base, int exponent) {
-        long result = 1;
-        for (int i = 1; i <= exponent; i++) {
-            result = result * base;
-        }
-        return result;
-    }
-
-    private static long factorial(int n)
-    {
-        if (n == 1)
-            return 1;
-        else
-            return n * factorial(n-1);
-    }
-
-///////////////////////////////////////////
-//    2. Validate User Input   ////////////
-///////////////////////////////////////////
-
-    public static int getInteger(int min, int max) {
-        Scanner scanner = new Scanner(System.in);
-        int userNumber;
-        do {
-            System.out.printf("Enter a number between %d and %d: ", min, max);
-            userNumber = scanner.nextInt();
-        } while (userNumber < min || userNumber > max);
-
-
-        return userNumber;
-    }
-
-
-
-    public static int factorial(int num) {
-        long result = 1;
-        for (int i = 1; i <= num; i++) {
-
-            result *= i;
-//            System.out.println(i);
-//            System.out.printf("%d! = %d  = %d", i, i, i);
-        }
-    }
-
-
-
-
-
-
-/////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-///////////////////////////////////////////////////////
-///////////// MAIN MAIN MAIN MAIN //////////////////////
-///////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-
-
     public static void main(String[] args) {
 
 ///////////////////////////////////////////
@@ -153,13 +58,16 @@ public class MethodsExercises {
 ////                keepGoing = false;
 ////            }
 ////        } while (keepGoing);
-        Scanner scnr = new Scanner(System.in);
-        String userContinue;
-        do {
-            System.out.println(factorial(getInteger(1,10)));
-            System.out.println("Do you wish to continue?");
-            userContinue = scnr.next();
-        } while (userContinue.equalsIgnoreCase("yes"));
+
+
+
+//        Scanner scnr = new Scanner(System.in);
+//        String userContinue;
+//        do {
+//            System.out.println(factorial(getInteger(1,10)));
+//            System.out.println("Do you wish to continue?");
+//            userContinue = scnr.next();
+//        } while (userContinue.equalsIgnoreCase("yes"));
 
 
 ///////////////////////////////////////////
@@ -193,4 +101,159 @@ public class MethodsExercises {
 
 
     }
+
+
+/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+///////////// METHODS METHODS METHODS //////////////////////
+///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////
+//    1. Basic Arithmetic    //////////////
+///////////////////////////////////////////
+
+    public static int addition(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    public static int subtraction(int num1, int num2) {
+        return num1 - num2;
+    }
+
+    public static int multiplication(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public static int division(int num1, int num2) {
+        return num1 / num2;
+    }
+
+    public static int modulus(int num1, int num2) {
+        return num1 % num2;
+    }
+
+
+///////////////////////////////////////////
+//    2. Validate User Input   ////////////
+///////////////////////////////////////////
+
+    public static int getInteger(int min, int max) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("Please enter a number between %d and %d: ", min, max);
+
+
+        if (!scanner.hasNextInt()) {
+            String userString = scanner.next();
+            System.out.println();
+            System.out.printf("Sorry, %s is not a valid entry.%n", userString);
+            System.out.println();
+            return getInteger(min, max);
+        }
+
+//        if (scanner.next().isEmpty()) {
+//            System.out.println();
+//            System.out.println("Sorry, you must enter something.");
+//            return getInteger(min, max);
+//        }
+
+        int userNumber = scanner.nextInt();
+        System.out.println();
+        if (userNumber < min) {
+            System.out.printf("Sorry, that number is too small. Please stay within the range of %d to %d.%n", min, max);
+            System.out.println();
+            return getInteger(min, max);
+        } else if (userNumber > max) {
+            System.out.printf("Sorry, that number is too big. Please stay within the range of %d to %d.%n", min, max);
+            System.out.println();
+            return getInteger(min, max);
+        } else {
+            return userNumber;
+        }
+
+
+    }
+
+////////////////////////////////////
+///////// Second draft //////////////
+////////////////////////////////////
+//    public static int getInteger(int min, int max) {
+//        Scanner scanner = new Scanner(System.in);
+//        int userInput;
+//        do {
+//            System.out.printf("Enter a number between %d and %d: ", min, max);
+//            while(!scanner.hasNextInt()) {
+//                String stringEntered = scanner.next();
+//                System.out.printf("%s is not a number%n", stringEntered);
+//                System.out.printf("Enter a number between %d and %d: ", min, max);
+//            }
+//            userInput = scanner.nextInt();
+//        } while (userInput < min || userInput > max);
+//
+//
+//        return userInput;
+//    }
+
+////////////////////////////////////
+///////// First draft //////////////
+////////////////////////////////////
+//    public static int getInteger(int min, int max) {
+//        Scanner scanner = new Scanner(System.in);
+//        int userInput;
+//        do {
+//            System.out.printf("Enter a number between %d and %d: ", min, max);
+//
+//            userInput = scanner.nextInt();
+//        } while (userInput < min || userInput > max);
+//
+//
+//        return userInput;
+//    }
+//
+//
+//
+//    public static int factorial(int num) {
+//        long result = 1;
+//        for (int i = 1; i <= num; i++) {
+//
+//            result *= i;
+////            System.out.println(i);
+////            System.out.printf("%d! = %d  = %d", i, i, i);
+//        }
+//    }
+
+
+///////////////////////////////////////////
+//    Random Stuff I Found    /////////////
+///////////////////////////////////////////
+
+    public static void count(int n) {
+        if (n <= 0) {
+            System.out.println("All done!");
+            return;
+        }
+        System.out.println(n);
+        count(n - 1);
+    }
+
+    public static long getPower(int base, int exponent) {
+        long result = 1;
+        for (int i = 1; i <= exponent; i++) {
+            result = result * base;
+        }
+        return result;
+    }
+
+    private static long factorial(int n)
+    {
+        if (n == 1)
+            return 1;
+        else
+            return n * factorial(n-1);
+    }
+
+
 }
