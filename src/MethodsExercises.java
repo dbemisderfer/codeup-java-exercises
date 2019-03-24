@@ -25,13 +25,34 @@ public class MethodsExercises {
 ///////////////////////////////////////////
 
 
-        getInteger(1, 10);
+//        getInteger(1, 10);
 
 
 
 ///////////////////////////////////////////
 //    3. Factorial of a Number    /////////
 ///////////////////////////////////////////
+
+
+        boolean keepGoing = true;
+        do {
+            System.out.printf("The factorial of that number is: %d.%n", factorial(getInteger(1, 10)));
+            System.out.println();
+            System.out.println("Would you like to continue? [y/n]");
+            Scanner scanner = new Scanner(System.in);
+            String userContinue = scanner.next();
+            System.out.println();
+            if (userContinue.equalsIgnoreCase("n") || userContinue.equalsIgnoreCase("no")) {
+                keepGoing = false;
+            }
+        } while (keepGoing);
+
+
+
+
+////////////////////////////////////
+///////// First draft //////////////
+////////////////////////////////////
 //        boolean keepGoing = true;
 ////        do {
 ////            Scanner scanner = new Scanner(System.in);
@@ -215,45 +236,50 @@ public class MethodsExercises {
 //
 //
 //
-//    public static int factorial(int num) {
-//        long result = 1;
-//        for (int i = 1; i <= num; i++) {
-//
-//            result *= i;
-////            System.out.println(i);
-////            System.out.printf("%d! = %d  = %d", i, i, i);
-//        }
-//    }
+
+///////////////////////////////////////////
+//    3. Factorial of a Number    /////////
+///////////////////////////////////////////
+    public static int factorial(int num) {
+        int result = 1;
+        for (int i = 1; i <= num; i++) {
+
+            result *= i;
+//            System.out.println(i);
+//            System.out.printf("%d! = %d  = %d", i, i, i);
+        }
+        return result;
+    }
 
 
 ///////////////////////////////////////////
 //    Random Stuff I Found    /////////////
 ///////////////////////////////////////////
 
-    public static void count(int n) {
-        if (n <= 0) {
-            System.out.println("All done!");
-            return;
-        }
-        System.out.println(n);
-        count(n - 1);
-    }
+//    public static void count(int n) {
+//        if (n <= 0) {
+//            System.out.println("All done!");
+//            return;
+//        }
+//        System.out.println(n);
+//        count(n - 1);
+//    }
+//
+//    public static long getPower(int base, int exponent) {
+//        long result = 1;
+//        for (int i = 1; i <= exponent; i++) {
+//            result = result * base;
+//        }
+//        return result;
+//    }
 
-    public static long getPower(int base, int exponent) {
-        long result = 1;
-        for (int i = 1; i <= exponent; i++) {
-            result = result * base;
-        }
-        return result;
-    }
-
-    private static long factorial(int n)
-    {
-        if (n == 1)
-            return 1;
-        else
-            return n * factorial(n-1);
-    }
+//    private static long factorial(int n)
+//    {
+//        if (n == 1)
+//            return 1;
+//        else
+//            return n * factorial(n-1);
+//    }
 
 
 }
