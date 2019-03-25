@@ -44,6 +44,7 @@ public class HighLow {
 
 
         boolean keepGoing = true;
+        int guessCounter = 0;
         do {
             Scanner scanner = new Scanner(System.in);
             int randomNumber = (int) (Math.random() * 100 + 1);
@@ -55,9 +56,13 @@ public class HighLow {
                 int userGuess = getInteger(1, 100);
                 if (userGuess < randomNumber) {
                     System.out.println("Sorry, the number is higher than that.");
+                    guessCounter++;
+                    System.out.printf("You have made %d guess(es), so far. Keep guessing.%n", guessCounter);
                 }
                 if (userGuess > randomNumber) {
                     System.out.println("Sorry, the number is lower than that.");
+                    guessCounter++;
+                    System.out.printf("You have made %d guess(es), so far. Keep guessing.%n", guessCounter);
                 }
                 if (userGuess == randomNumber) {
                     System.out.println("You guessed it!");
