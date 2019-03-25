@@ -49,6 +49,7 @@ public class HighLow {
             System.out.println(randomNumber);
             System.out.println();
             System.out.println("Guess a number between 1 and 100.");
+            boolean gameOn = true;
              do {
                 int userGuess = getInteger(1, 100);
                 if (userGuess < randomNumber) {
@@ -60,9 +61,9 @@ public class HighLow {
                 if (userGuess == randomNumber) {
                     System.out.println("You guessed it!");
                     System.out.println();
-                    break;
+                    gameOn = false;
                 }
-            } while (keepGoing);
+            } while (gameOn);
 
             System.out.println("Would you like to play again? [y/n]");
             String userResponse = scanner.next();
