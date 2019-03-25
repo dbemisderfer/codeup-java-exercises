@@ -27,6 +27,16 @@ public class ConsoleExercises {
 //        System.out.println(userInput1);
 //        System.out.println(userInput2);
 //        System.out.println(userInput3);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a three-word sentence: ");
+//        String userInput = scanner.nextLine();
+        String wordOne = scanner.next();
+        String wordTwo = scanner.next();
+        String wordThree = scanner.next();
+        System.out.println(wordOne);
+        System.out.println(wordTwo);
+        System.out.println(wordThree);
 /////////////////////////// !!!! IMPORTANT !!!! /////////////////////
 //        String random = scanner.nextLine(); // necessary if you're not commenting out previous lines
 ///////////////////////////////////////////////////////////

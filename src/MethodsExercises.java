@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math;
 
+@SuppressWarnings("Duplicates")
 public class MethodsExercises {
 
     public static void main(String[] args) {
@@ -262,8 +263,8 @@ public class MethodsExercises {
 
         boolean keepGoing = true;
         do {
-            System.out.printf("Please enter a number between 1 and 10 (inclusive): ");
-            int userInput = getInteger(1, 10);
+            System.out.printf("Please enter a number between 1 and 12 (inclusive): ");
+            int userInput = getInteger(1, 12);
             System.out.printf("The factorial of that number is: %d.%n", factorial(userInput));
             System.out.println();
             System.out.println("Would you like to continue? [y/n]");
