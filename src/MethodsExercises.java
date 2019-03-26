@@ -247,15 +247,24 @@ public class MethodsExercises {
 ///////////////////////////////////////////
 //    3. Factorial of a Number    /////////
 ///////////////////////////////////////////
-    public static long factorial(int num) {
-        int result = 1;
-        for (int i = 1; i <= num; i++) {
+//    public static long factorial(int num) {
+//        long result = 1;
+//        for (int i = 1; i <= num; i++) {
+//
+//            result *= i;
+////            System.out.println(i);
+////            System.out.printf("%d! = %d  = %d", i, i, i);
+//        }
+//        return result;
+//    }
 
-            result *= i;
-//            System.out.println(i);
-//            System.out.printf("%d! = %d  = %d", i, i, i);
+    public static long recursionFactorial(int num) {
+
+        if (num == 1) {
+            return 1;
         }
-        return result;
+
+        return num * recursionFactorial(num - 1);
     }
 
 
@@ -263,12 +272,12 @@ public class MethodsExercises {
 
         boolean keepGoing = true;
         do {
-            System.out.printf("Please enter a number between 1 and 12 (inclusive): ");
-            int userInput = getInteger(1, 12);
-            System.out.printf("The factorial of that number is: %d.%n", factorial(userInput));
+            System.out.printf("Please enter a number between 1 and 16 (inclusive): ");
+            int userInput = getInteger(1, 16);
+            System.out.printf("The factorial of that number is: %d.%n", recursionFactorial(userInput));
             System.out.println();
             System.out.println("Would you like to continue? [y/n]");
-//            scanner = new Scanner(System.in);
+//            Scanner scanner = new Scanner(System.in);
             String userContinue = scanner.next();
             System.out.println();
             if (userContinue.equalsIgnoreCase("n") || userContinue.equalsIgnoreCase("no")) {
