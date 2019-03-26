@@ -3,52 +3,59 @@ import java.util.Scanner;
 
 public class Input {
 //    private static String scanner;
-    private String scanner;
+    private Scanner scanner;
+
+    public Input() {
+        scanner = new Scanner(System.in);
+    }
 
     public String getString() {
+        System.out.print("Please enter a word: ");
+        return scanner.next();
+    }
+
+
+//    public boolean yesNo() {
+//        System.out.print("Enter 'y' or 'yes' to continue (otherwise the program will end).");
+//        return scanner.next().equalsIgnoreCase("y") || scanner.next().equalsIgnoreCase("yes");
+//    }
+
+//    public boolean yesNo() {
+//        System.out.print("Enter 'y' or 'yes' to continue (otherwise the program will end).");
+//        boolean response = (scanner.next().equalsIgnoreCase("y")) ? true : false;
+//        return response;
+//    }
+
+    public boolean yesNo() {
+        System.out.print("Enter 'y' or 'yes' to continue (otherwise the program will end).");
+        String response = scanner.next();
+        return response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes");
+    }
+
+
+
+    public int getInt (int min, int max) {
+        System.out.printf("Please enter a number between %d and %d: ", min, max);
+        return MethodsExercises.getInteger(min, max);
 
     }
 
-    public boolean yesNo(String userInput) {
-        return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
+
+    public int getInt () {
+        System.out.print("Please enter a number: ");
+        return scanner.nextInt();
     }
 
-    public int getInt(int min, int max) {
-        int output;
-        Scanner scan = new Scanner(System.in);
-        while(!scan.hasNextInt()) {
-            System.out.printf("Sorry, that is not a valid entry. Please enter an integer between %d and %d: ", min, max);
-            scan.next();
-        }
-        output = scan.nextInt();
-        if (output < min || output > max) {
-            System.out.printf("Sorry that is not within the range of %d and %d. Please enter a valid integer: ", min, max);
-            return getInt(min, max);
-        }
-        return output;
 
+
+    public double getDouble(double min, double max) {
+        System.out.printf("Please enter a decimal number between %.2f and %.2f: ", min, max);
+        return MethodsExercises.getDecimalInteger(min, max);
     }
 
-    public int getInt() {
-
-    }
-
-    public double getDouble(double minimum, double maximum) {
-        int result;
-        Scanner scanman = new Scanner(System.in);
-        while(!scanman.hasNextInt()) {
-            System.out.printf("I'm sorry, that is not a valid entry. Please enter an integer between %d and %d: ", minimum, maximum);
-            scanman.next();
-        }
-        result = scanman.nextInt();
-        if (result < minimum || result > maximum) {
-            System.out.printf("Sorry that is not within the range of %d and %d. Please enter a valid integer: ", minimum, maximum);
-            return getDouble(minimum, maximum);
-        }
-        return result;
-    }
 
     public double getDouble() {
-
+        System.out.print("Please enter a decimal number: ");
+        return scanner.nextDouble();
     }
 }
