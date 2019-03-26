@@ -8,7 +8,8 @@ public class Person {
 
     // returns the person's name
     public String getName() {
-        return String.format("Person's name is: %s", name);
+//        return String.format("Person's name is: %s", name);
+        return this.name;
     }
 
     // changes the name property to the passed value
@@ -36,6 +37,22 @@ public class Person {
         System.out.println(p1);
         System.out.println(p2);
 
+//        Person person1 = new Person("John");
+//        Person person2 = new Person("John");
+//        System.out.println(person1.getName().equals(person2.getName()));
+//        System.out.println(person1 == person2);
+
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1 == person2);
+
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1.getName());
+//        System.out.println(person2.getName());
+//        person2.setName("Jane");
+//        System.out.println(person1.getName());
+//        System.out.println(person2.getName());
 
 
     }
