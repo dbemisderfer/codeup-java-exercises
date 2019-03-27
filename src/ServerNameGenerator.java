@@ -5,7 +5,7 @@ public class ServerNameGenerator {
     private static String randomNoun;
     private static String randomAdj;
 
-    public static String randomElement(String array[]) {
+    public static String randomElement(String[] array) {
         int x = (int) (Math.random() * (array.length));
 
         return array[x];
@@ -15,7 +15,14 @@ public class ServerNameGenerator {
 //        return
 //    }
 
+
+
     public static void main(String[] args) {
+//        int max = 10;                // How to test for random number
+//        for (int i = 0; i < 100; i++) {
+//            int random = (int)(Math.random() * max);
+//            System.out.println(random);
+//        }
 
         String[] adjectives = {
                 "bright",
