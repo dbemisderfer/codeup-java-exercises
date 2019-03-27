@@ -9,7 +9,7 @@ public class BurgerTools {
 
     public static String getTopping() {
         return mostPopularTopping;
-    }
+    } // REMOVE STATIC IF NOT WORKING!!!!!!!!!!
 
     public static void setTopping(String newTopping) {
         BurgerTools.mostPopularTopping = newTopping;
