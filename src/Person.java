@@ -24,7 +24,8 @@ public class Person {
 
     // constructor
     public Person(String personName) {
-        name = personName;
+
+        this.name = personName;
     }
 
     public static void main(String[] args) {
