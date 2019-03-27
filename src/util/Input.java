@@ -89,4 +89,8 @@ public class Input {
 ////        System.out.print("Please enter a decimal number: ");
 //        return scanner.nextDouble();
 //    }
+
+    public static void main(String[] args) {
+        Input in = new Input();
+    }
 }
