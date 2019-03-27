@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import static java.util.Arrays.fill;
 
 public class ScratchPadArrays {
@@ -55,33 +57,60 @@ public class ScratchPadArrays {
 //        java
 
 
-        int[][] matrix = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+//        int[][] matrix = {
+//                {1, 2, 3},
+//                {4, 5, 6},
+//                {7, 8, 9}
+//        };
+//
+//// access the first element in the second row
+//        System.out.println(matrix[1][0]); // 4
+//// the last element in the first row
+//        System.out.println(matrix[0][2]); // 3
+//// the first element in the last row
+//        System.out.println(matrix[2][0]); // 7
+//
+//
+//        for (int[] row : matrix) {
+//            System.out.println("+---+---+---+");
+//
+//            System.out.print("| ");
+//
+//            for (int element : row) {
+//                System.out.print(element + " | ");
+//            }
+//
+//            System.out.println();
+//        }
+//
+//        System.out.println("+---+---+---+");
+
+        String[] seasons = new String[4];
+        seasons[0] = "Spring";
+        seasons[1] = "Summer";
+        seasons[2] = "Autumn";
+        seasons[3] = "Winter";
+
+        String[] seasons2 = {
+                "Spring",
+                "Summer",
+                "Autumn",
+                "Winter"
         };
 
-// access the first element in the second row
-        System.out.println(matrix[1][0]); // 4
-// the last element in the first row
-        System.out.println(matrix[0][2]); // 3
-// the first element in the last row
-        System.out.println(matrix[2][0]); // 7
+        int[] phoneNumber = new int[7];
 
-
-        for (int[] row : matrix) {
-            System.out.println("+---+---+---+");
-
-            System.out.print("| ");
-
-            for (int element : row) {
-                System.out.print(element + " | ");
-            }
-
-            System.out.println();
+        Arrays.fill(phoneNumber, 5);
+        int[] phoneNumber2 = Arrays.copyOf(phoneNumber, 8);
+        for (int digit : phoneNumber2) {
+            System.out.print(digit);
         }
+        System.out.println();
+        System.out.println(Arrays.toString(seasons));
+//        Arrays.sort(seasons);
+//        System.out.println(Arrays.toString(seasons));
+        System.out.println(Arrays.equals(seasons, seasons2)); //returns true or false
 
-        System.out.println("+---+---+---+");
 
     }
 }
