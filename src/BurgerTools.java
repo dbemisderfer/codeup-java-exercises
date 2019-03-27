@@ -7,12 +7,12 @@ public class BurgerTools {
         System.out.println("Grilling burger");
     }
 
-    public String getTopping() {
-        return this.mostPopularTopping;
+    public static String getTopping() {
+        return mostPopularTopping;
     }
 
-    public void setTopping(String newTopping) {
-        this.mostPopularTopping = newTopping;
+    public static void setTopping(String newTopping) {
+        BurgerTools.mostPopularTopping = newTopping;
     }
 
     public BurgerTools(String topping, int expires, int temp) {
