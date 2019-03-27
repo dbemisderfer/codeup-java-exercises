@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class ServerNameGenerator {
     private static String randomNoun;
@@ -44,7 +45,8 @@ public class ServerNameGenerator {
 
         randomNoun = randomElement(nouns);
         randomAdj = randomElement(adjectives);
-        System.out.printf("Here is your server name:%n%s-%s", randomAdj, randomNoun);
+        System.out.printf("Here is your server name:%n%s-%s%n", randomAdj, randomNoun);
+        System.out.println(Arrays.toString(nouns));
 
 
     }
