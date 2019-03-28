@@ -1,6 +1,7 @@
 package movies;
 import util.Input;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MoviesApplication {
     public String output;
@@ -87,6 +88,7 @@ public class MoviesApplication {
         Input input = new Input();
         boolean userResponse = true;
 //        getMovieCategory(movieArray, selectionNum);
+        Scanner scanner = new Scanner(System.in);
 
         do {
         System.out.println("What would you like to do?\n" +
@@ -103,8 +105,7 @@ public class MoviesApplication {
 
         switch(selectionNum) {
             case 0:
-                System.out.println("Sayonara, Susie!e" +
-                        "");
+                System.out.println("Sayonara!");
                 break;
             case 1:
                 getAllMovies();
@@ -125,6 +126,7 @@ public class MoviesApplication {
                 System.out.println("Goodbye!");
                 break;
         }
+
         System.out.println("\n");
         System.out.println("Would you like to continue? [y/n]: ");
         userResponse = input.yesNo();
