@@ -7,6 +7,7 @@ public class BurgerTester {
         System.out.println(bt1.getTopping());
         bt1.setTopping("mustard");
         System.out.println(bt1.getTopping());
+
         bt1.grill();
     }
 }
