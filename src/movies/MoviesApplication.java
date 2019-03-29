@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class MoviesApplication {
-    public String output;
+    static Movie[] movieArray;
+    static Input input;
+//    public String output;
 
 //    public static void getMovieCategory(Movie[] movieArray, int userSelection) {
 //
@@ -41,19 +43,33 @@ public class MoviesApplication {
 //    }
 
     public static void getAllMovies() {
-        Movie[] movieArray = MoviesArray.findAll();
+//        movieArray = MoviesArray.findAll(); // MUST BE TURNED OFF TO ADD MOVIES
         for (Movie movie : movieArray) {
             System.out.println(movie.getName() + " -- " + movie.getCategory());
         }
     }
 
     public static void getMovieFromCategory(String category) {
-        Movie[] movieArray = MoviesArray.findAll();
+//        movieArray = MoviesArray.findAll(); //MUST BE TURNED OFF TO VIEW NEW MOVIES
         for (Movie movie : movieArray) {
             if (movie.getCategory().equals(category)) {
                 System.out.println(movie.getName());
             }
         }
+    }
+
+    public static void addMovie() {
+        System.out.print("Enter a title: " + "\n");
+        String placeHolder = input.getString(); // necessary to stop at title prompt
+        String movieTitle = input.getString();
+        System.out.print("Enter a category: ");
+        String movieCategory = input.getString();
+        Movie[] newMovieArray = Arrays.copyOf(movieArray, movieArray.length + 1);
+        newMovieArray[newMovieArray.length - 1] = new Movie(movieTitle, movieCategory);
+        movieArray = newMovieArray;
+//        for(Movie movie : newMovieArray) {
+////            System.out.println(movie.getName() + " : " + movie.getCategory());
+//        }
     }
 
 
@@ -85,10 +101,16 @@ public class MoviesApplication {
 //        System.out.println(getMovieCategory(movieArray, 5));
 //        getMovieCategory(movieArray, 5));
 //        System.out.println("Select a number between 0 and 5");
-        Input input = new Input();
+
+
+
+        movieArray = MoviesArray.findAll(); //MUST BE ADDED HERE TO ADD NEW MOVIES
+        input = new Input();
+
+
 //        boolean userResponse = true;
 //        getMovieCategory(movieArray, selectionNum);
-        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);
 
         while(true) {
         System.out.println("What would you like to do?\n" +
@@ -99,6 +121,7 @@ public class MoviesApplication {
                 "3 - view movies in the drama category\n" +
                 "4 - view movies in the horror category\n" +
                 "5 - view movies in the scifi category\n" +
+                "6 - add a movie" +
                 "\n" +
                 "Enter your choice: ");
         int selectionNum = input.getInt();
@@ -123,6 +146,9 @@ public class MoviesApplication {
             case 5:
                 getMovieFromCategory("scifi");
                 break;
+            case 6:
+                addMovie();
+                break;
             default:
                 break;
         }
@@ -139,6 +165,13 @@ public class MoviesApplication {
 //            System.out.println("Would you like to continue? [y/n]: ");
 //            if (input.yesNo()) continue;
 //            else break;
+//        }
+//        movieArray = MoviesArray.findAll();
+//        Movie[] newMovieArray = Arrays.copyOf(movieArray, movieArray.length + 1);
+//        newMovieArray[newMovieArray.length - 1] = new Movie("The Exorcist", "horror");
+//
+//        for(Movie movie : newMovieArray) {
+//            System.out.println(movie.getName() + " : " + movie.getCategory());
 //        }
 
     }
