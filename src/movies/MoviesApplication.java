@@ -86,11 +86,11 @@ public class MoviesApplication {
 //        getMovieCategory(movieArray, 5));
 //        System.out.println("Select a number between 0 and 5");
         Input input = new Input();
-        boolean userResponse = true;
+//        boolean userResponse = true;
 //        getMovieCategory(movieArray, selectionNum);
         Scanner scanner = new Scanner(System.in);
 
-        do {
+        while(true) {
         System.out.println("What would you like to do?\n" +
                 "\n" +
                 "0 - exit\n" +
@@ -101,12 +101,13 @@ public class MoviesApplication {
                 "5 - view movies in the scifi category\n" +
                 "\n" +
                 "Enter your choice: ");
-        int selectionNum = input.getInt(0, 5);
+        int selectionNum = input.getInt();
 
         switch(selectionNum) {
             case 0:
                 System.out.println("Sayonara!");
-                break;
+                return;
+//                break;
             case 1:
                 getAllMovies();
                 break;
@@ -123,14 +124,13 @@ public class MoviesApplication {
                 getMovieFromCategory("scifi");
                 break;
             default:
-                System.out.println("Goodbye!");
                 break;
         }
 
-        System.out.println("\n");
-        System.out.println("Would you like to continue? [y/n]: ");
-        userResponse = input.yesNo();
-        } while (userResponse);
+//        System.out.println("\n");
+//        System.out.println("Would you like to continue? [y/n]: ");
+//        userResponse = input.yesNo();
+        }
 
 //////////////////////////////////////
 /////// ALTERNATE WHILE LOOP /////////
