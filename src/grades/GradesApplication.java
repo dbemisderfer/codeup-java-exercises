@@ -55,23 +55,23 @@ public class GradesApplication {
 
         }
         System.out.println();
-        System.out.println();
         while(true) {
-            System.out.println("What student would you like to see more information on?");
+            System.out.printf("%nWhat student would you like to see more information on? ");
             userUsernameResponse = input.getString();
             System.out.println();
             if (!usernamesArray.contains(userUsernameResponse)) {
-                System.out.printf("Sorry, no student found with the github username of \"%s\"%n", userUsernameResponse);
+                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
+                System.out.println();
             } else {
                 getStudentInfo();
             }
-            System.out.println("Would you like to see another student? [y/n]");
+            System.out.printf("%nWould you like to see another student? [y/n] ");
 //            boolean userContinues = input.yesNo();
             if(input.yesNo()) {
                 input.getString();
                 continue;
             } else {
-                System.out.println("Goodbye, and have a wonderful day!");
+                System.out.printf("%nGoodbye, and have a wonderful day!");
                 break;
             }
 
