@@ -24,11 +24,11 @@ public class Student {
     // returns the average of the students grades
     public double getGradeAverage() {
         double sum = 0;
-        int totalGrades = grades.size();
+        int numberOfGrades = grades.size();
         for (Integer grade : grades) {
             sum += grade;
         }
-        double finalGrade = sum / totalGrades;
+        double finalGrade = sum / numberOfGrades;
         double roundedGrade = (double) Math.round(finalGrade * 100) / 100;
         return roundedGrade;
     }
