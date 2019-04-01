@@ -1,10 +1,14 @@
 package grades;
 
+import apple.laf.JRSUIConstants;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
     private String name;
-    private ArrayList<Integer> grades;
+    private List<Integer> grades;
+//    Integer allGrades;
 
     public Student(String name) {
         this.name = name;
@@ -33,6 +37,15 @@ public class Student {
         return roundedGrade;
     }
 
+    public void getAllGrades() {
+
+        for (Integer grade : grades) {
+            System.out.print(grade + " ");
+        }
+        System.out.println();
+    }
+
+
     public static void main(String[] args) {
 
         Student student1 = new Student("Larry");
@@ -43,6 +56,7 @@ public class Student {
         student1.addGrade(71);
         System.out.println(student1.grades);
         System.out.println(student1.getGradeAverage());
+
 
 //        ArrayList<Integer> numbers = new ArrayList<>();
 //        numbers.add(2);
