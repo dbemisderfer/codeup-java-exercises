@@ -21,32 +21,32 @@ public class GradesApplication {
         System.out.printf("Current Average: %s%n", students.get(userUsernameResponse).getGradeAverage());
     }
 
-    public static void individualStats() {
-        System.out.printf("%nWhat student would you like to see more information on? ");
-        userUsernameResponse = input.getString();
-        userUsernameResponse = input.getString();
-        while(true) {
-            System.out.println();
-            if (!usernamesArray.contains(userUsernameResponse)) {
-                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
-                System.out.println();
-            } else {
-                getStudentInfo();
-                break;
-            }
-
-            System.out.printf("%nWould you like to see another student? [y/n] ");
-//            boolean userContinues = input.yesNo();
-            if(input.yesNo()) {
-                input.getString();
-                continue;
-            } else {
-                System.out.printf("%nGoodbye, and have a wonderful day!");
-                break;
-            }
-
-        }
-    }
+//    public static void individualStats() {
+//        System.out.printf("%nWhat student would you like to see more information on? ");
+//        userUsernameResponse = input.getString();
+//        userUsernameResponse = input.getString();
+//        while(true) {  //try changing this to a do-while loop!!!!!
+//            System.out.println();
+//            if (!usernamesArray.contains(userUsernameResponse)) {
+//                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
+//                System.out.println();
+//            } else {
+//                getStudentInfo();
+//            }
+//
+//            System.out.printf("%nWould you like to see another student? [y/n] ");
+////            boolean userContinues = input.yesNo();
+//            if(input.yesNo()) { //try changing yesNo input to nextLine, replacing next (in Input class)!!!!!
+//                input.getString();
+//                input.getString();
+//                continue;
+//            } else {
+//                System.out.printf("%nGoodbye, and have a wonderful day!");
+//                break;
+//            }
+//
+//        }
+//    }
 
     public static void main(String[] args) {
         input = new Input();
@@ -81,52 +81,56 @@ public class GradesApplication {
 //        System.out.printf("Array of usernames: %s%n", usernamesArray);
 //        student1.getAllGrades();
         System.out.println();
-        for (Object username : usernamesArray) {
-            System.out.printf("%s: ", username);
-            students.get(username).getAllGrades();
-        }
-        System.out.println("Welcome!\n");
-        System.out.println("What would you like to do:");
-        System.out.println("1 - View individual student grades/averages");
-        System.out.println("2 - View all student grades");
-        System.out.println("3 - View class average");
-        System.out.println("4 - Exit");
-        userOption = input.getInt();
-        switch(userOption) {
-            case 1: individualStats();
-            break;
-        }
+
+//        String usernames = "|";
+//        for (String key : students.keySet()) {
+//            usernames += " " + key + " |";
+//        }
+//        System.out.printf("Here are the usernames: %s%n", "\n" + usernames);
+//
+//        for (Object username : usernamesArray) {
+//            System.out.printf("%s: ", username);
+//            students.get(username).getAllGrades();
+//        }
+
+//        System.out.println("Welcome!\n");
+//        System.out.println("What would you like to do:");
+//        System.out.println("1 - View individual student grades/averages");
+//        System.out.println("2 - View all student grades");
+//        System.out.println("3 - View class average");
+//        System.out.println("4 - Exit");
+//        userOption = input.getInt();
+//        switch(userOption) {
+//            case 1: individualStats();
+//            break;
+//        }
 
         System.out.println("Here are the github usernames of our students:\n");
         for (Object username : usernamesArray) {
             System.out.printf("|%s| ", username);
         }
-        String usernames = "|";
-        for (String key : students.keySet()) {
-            usernames += " " + key + " |";
-            System.out.printf("Here are the usernames", usernames);
+        System.out.println();
+        while(true) {
+            System.out.printf("%nWhat student would you like to see more information on? ");
+            userUsernameResponse = input.getString();
+            System.out.println();
+            if (!usernamesArray.contains(userUsernameResponse)) {
+                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
+                System.out.println();
+            } else {
+                getStudentInfo();
+            }
+            System.out.printf("%nWould you like to see another student? [y/n] ");
+//            boolean userContinues = input.yesNo();
+            if(input.yesNo()) {
+                input.getString();
+                continue;
+            } else {
+                System.out.printf("%nGoodbye, and have a wonderful day!");
+                break;
+            }
+
         }
-//        while(true) {
-//            System.out.printf("%nWhat student would you like to see more information on? ");
-//            userUsernameResponse = input.getString();
-//            System.out.println();
-//            if (!usernamesArray.contains(userUsernameResponse)) {
-//                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
-//                System.out.println();
-//            } else {
-//                getStudentInfo();
-//            }
-//            System.out.printf("%nWould you like to see another student? [y/n] ");
-////            boolean userContinues = input.yesNo();
-//            if(input.yesNo()) {
-//                input.getString();
-//                continue;
-//            } else {
-//                System.out.printf("%nGoodbye, and have a wonderful day!");
-//                break;
-//            }
-//
-//        }
 
 
 

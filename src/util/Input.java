@@ -30,6 +30,7 @@ public class Input {
     public boolean yesNo() {
 //        System.out.print("Enter 'y' or 'yes' to continue (otherwise the program will end).");
         String response = scanner.next();
+//        String response = scanner.nextLine();
         return response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes");
     }
 
