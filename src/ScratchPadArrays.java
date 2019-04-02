@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static java.util.Arrays.fill;
 
@@ -98,19 +100,36 @@ public class ScratchPadArrays {
                 "Winter"
         };
 
-        int[] phoneNumber = new int[7];
-
-        Arrays.fill(phoneNumber, 5);
-        int[] phoneNumber2 = Arrays.copyOf(phoneNumber, 8);
-        for (int digit : phoneNumber2) {
-            System.out.print(digit);
-        }
+//        int[] phoneNumber = new int[7];
+//
+//        Arrays.fill(phoneNumber, 5);
+//        int[] phoneNumber2 = Arrays.copyOf(phoneNumber, 8);
+//        for (int digit : phoneNumber2) {
+//            System.out.print(digit);
+//        }
         System.out.println();
         System.out.println(Arrays.toString(seasons));
+        for(String season : seasons) {
+            System.out.println(season);
+        }
 //        Arrays.sort(seasons);
 //        System.out.println(Arrays.toString(seasons));
-        System.out.println(Arrays.equals(seasons, seasons2)); //returns true or false
-
+//        System.out.println(Arrays.equals(seasons, seasons2)); //returns true or false
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Spring");
+        stringList.add("Summer");
+        stringList.add("Autumn");
+        stringList.add("Winter");
+        System.out.println(stringList);
+        for(String season : stringList) {
+            System.out.println(season);
+        }
+////////////////////////////////////////////
+/////////// FOR LOOP ON ArrayList //////////
+////////////////////////////////////////////
+//        for(int i = 0; i < stringList.size(); i++) {
+//            System.out.println(stringList.get(i));
+//        }
 
     }
 }
