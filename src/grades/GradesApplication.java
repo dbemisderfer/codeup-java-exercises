@@ -7,8 +7,11 @@ import util.Input;
 
 public class GradesApplication {
     static Input input;
-    static Map<String, Student> students; //Use interface type rather than the implementer
+    static Map<String, Student> students; //Use interface type rather than the implementer (Map, instead of HashMap)
     static String userUsernameResponse;
+    static int userOption;
+    static Set usernamesArray;
+    static Scanner scanner;
 
     public static void getStudentInfo() {
         System.out.printf("Github Username: %s%n", userUsernameResponse);
@@ -18,9 +21,37 @@ public class GradesApplication {
         System.out.printf("Current Average: %s%n", students.get(userUsernameResponse).getGradeAverage());
     }
 
+    public static void individualStats() {
+        System.out.printf("%nWhat student would you like to see more information on? ");
+        userUsernameResponse = input.getString();
+        userUsernameResponse = input.getString();
+        while(true) {
+            System.out.println();
+            if (!usernamesArray.contains(userUsernameResponse)) {
+                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
+                System.out.println();
+            } else {
+                getStudentInfo();
+                break;
+            }
+
+            System.out.printf("%nWould you like to see another student? [y/n] ");
+//            boolean userContinues = input.yesNo();
+            if(input.yesNo()) {
+                input.getString();
+                continue;
+            } else {
+                System.out.printf("%nGoodbye, and have a wonderful day!");
+                break;
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         input = new Input();
-        Set usernamesArray;
+        scanner = new Scanner(System.in);
+//        Set usernamesArray;
         students = new HashMap<>();
         Student student1 = new Student("Jose");
         student1.addGrade(88);
@@ -49,41 +80,53 @@ public class GradesApplication {
 //        System.out.printf("Name of student is: %s%n", student2.getName());
 //        System.out.printf("Array of usernames: %s%n", usernamesArray);
 //        student1.getAllGrades();
+        System.out.println();
+        for (Object username : usernamesArray) {
+            System.out.printf("%s: ", username);
+            students.get(username).getAllGrades();
+        }
         System.out.println("Welcome!\n");
-//        System.out.println("Would you like to see:");
-//        System.out.println("1 - Individual student grades/averages");
-//        System.out.println("2 - All student grades");
-//        System.out.println("3 - Class average");
+        System.out.println("What would you like to do:");
+        System.out.println("1 - View individual student grades/averages");
+        System.out.println("2 - View all student grades");
+        System.out.println("3 - View class average");
+        System.out.println("4 - Exit");
+        userOption = input.getInt();
+        switch(userOption) {
+            case 1: individualStats();
+            break;
+        }
+
         System.out.println("Here are the github usernames of our students:\n");
         for (Object username : usernamesArray) {
             System.out.printf("|%s| ", username);
         }
-        System.out.println();
-//        for (Object username : usernamesArray) {
-//            System.out.printf("%s: ", username);
-//            students.get(username).getAllGrades();
-//        }
-        while(true) {
-            System.out.printf("%nWhat student would you like to see more information on? ");
-            userUsernameResponse = input.getString();
-            System.out.println();
-            if (!usernamesArray.contains(userUsernameResponse)) {
-                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
-                System.out.println();
-            } else {
-                getStudentInfo();
-            }
-            System.out.printf("%nWould you like to see another student? [y/n] ");
-//            boolean userContinues = input.yesNo();
-            if(input.yesNo()) {
-                input.getString();
-                continue;
-            } else {
-                System.out.printf("%nGoodbye, and have a wonderful day!");
-                break;
-            }
-
+        String usernames = "|";
+        for (String key : students.keySet()) {
+            usernames += " " + key + " |";
+            System.out.printf("Here are the usernames", usernames);
         }
+//        while(true) {
+//            System.out.printf("%nWhat student would you like to see more information on? ");
+//            userUsernameResponse = input.getString();
+//            System.out.println();
+//            if (!usernamesArray.contains(userUsernameResponse)) {
+//                System.out.printf("Sorry, no student found with the github username of \"%s\".", userUsernameResponse);
+//                System.out.println();
+//            } else {
+//                getStudentInfo();
+//            }
+//            System.out.printf("%nWould you like to see another student? [y/n] ");
+////            boolean userContinues = input.yesNo();
+//            if(input.yesNo()) {
+//                input.getString();
+//                continue;
+//            } else {
+//                System.out.printf("%nGoodbye, and have a wonderful day!");
+//                break;
+//            }
+//
+//        }
 
 
 
