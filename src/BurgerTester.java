@@ -9,5 +9,6 @@ public class BurgerTester {
         System.out.println(bt1.getTopping());
 
         bt1.grill();
+
     }
 }
