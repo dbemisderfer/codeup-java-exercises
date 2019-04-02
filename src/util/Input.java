@@ -34,12 +34,25 @@ public class Input {
         return response.equalsIgnoreCase("y") || response.equalsIgnoreCase("yes");
     }
 
+//    public int getInt() { //old getInt method
+//        if (scanner.hasNextInt()) {
+//            return scanner.nextInt();
+//        }
+//        scanner.next(); //// necessary so no infinite loop
+//        return getInt();
+//    }
+
     public int getInt() {
-        if (scanner.hasNextInt()) {
-            return scanner.nextInt();
+        int userInteger = 0;
+        String userInput;
+        userInput = scanner.next();
+        try {
+            userInteger = Integer.valueOf(userInput);
+        } catch (Exception e) {
+            System.out.println(e);
+            return getInt();
         }
-        scanner.next(); //// necessary so no infinite loop
-        return getInt();
+        return userInteger;
     }
 
     public int getInt (int min, int max) {
@@ -64,12 +77,25 @@ public class Input {
 //    }
 
 
-    public double getDouble() {
-        if (scanner.hasNextDouble()) {
-            return scanner.nextDouble();
+//    public double getDouble() {  // old getDouble method
+//        if (scanner.hasNextDouble()) {
+//            return scanner.nextDouble();
+//        }
+//        scanner.next(); //// necessary so no infinite loop
+//        return getDouble();
+//    }
+
+        public double getDouble() {
+        double userDouble = 0;
+        String userInput;
+        userInput = scanner.next();
+        try {
+            userDouble = Double.valueOf(userInput);
+        } catch (Exception e) {
+            System.out.println(e);
+            return getDouble();
         }
-        scanner.next(); //// necessary so no infinite loop
-        return getDouble();
+        return userDouble;
     }
 
     public double getDouble (double min, double max) {
