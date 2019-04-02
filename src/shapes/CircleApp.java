@@ -8,6 +8,7 @@ public class CircleApp {
         Circle c1 = new Circle(getRadius);
         System.out.println(c1.getArea());
         System.out.println(c1.getCircumference());
+
     }
 
 }
