@@ -2,7 +2,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ScratchPadFileIO {
@@ -21,7 +23,11 @@ public class ScratchPadFileIO {
             if (! Files.exists(dataFile)) {
                 Files.createFile(dataFile);
             }
-
+//            Files.write(
+//                    dataFile,
+//                    Arrays.asList("strawberry"),
+//                    StandardOpenOption.APPEND
+//            );
             List<String> fruits = new ArrayList<>();
             fruits.add("banana");fruits.add("cantalope");
             fruits.add("peach");fruits.add("melon");
