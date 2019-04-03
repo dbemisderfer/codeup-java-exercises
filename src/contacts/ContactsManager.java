@@ -55,7 +55,12 @@ public class ContactsManager {
 
                 break;
             case 4 :
-                deleteContact();
+                try {
+                    deleteContact();
+                } catch (IOException ioe){
+                    ioe.printStackTrace();
+                }
+
                 break;
             case 5 :
 //                System.exit(0);
@@ -114,9 +119,25 @@ public class ContactsManager {
         }
     }
 
-    public static void deleteContact() {
+    public static void deleteContact() throws IOException {
+
+        System.out.println("Enter a name to delete: ");
+        String searchFor = input.getString();
+        List<String> lines = Files.readAllLines(dataFile);
+        List<String> newList = new ArrayList<>();
+
+        for (String line : lines) {
+            if (line.equals(searchFor)) {
+                newList.add("");
+                continue;
+            }
+            newList.add(line);
+        }
+
+        Files.write(dataFile, newList);
         System.out.println();
     }
+
     public static void main(String[] args) {
 //        Contact contact1 = new Contact("Marty", "Henson", "1231231234");
 //        System.out.printf("%s %s %s%n", contact1.getFirstName(), contact1.getLastName(), contact1.getPhone());
