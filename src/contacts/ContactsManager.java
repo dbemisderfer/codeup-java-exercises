@@ -132,14 +132,17 @@ public class ContactsManager {
     }
 
     public static void deleteContact() throws IOException {
-
-        System.out.printf("%nEnter a name to delete: %n");
-        String searchFor = input.getString();
+        System.out.println("You have requested the deletion of a contact...");
+        System.out.printf("%nEnter a first name: %n");
+        String firstName = input.getString();
+        System.out.printf("%nEnter a last name: %n");
+        String lastName = input.getString();
+        String fullName = firstName + " " + lastName;
         List<String> lines = Files.readAllLines(dataFile);
         List<String> newList = new ArrayList<>();
 
         for (String line : lines) {
-            if (line.equals(searchFor)) {
+            if (line.contains(fullName)) {
                 newList.add("");
                 continue;
             }
@@ -147,6 +150,8 @@ public class ContactsManager {
         }
 
         Files.write(dataFile, newList);
+        System.out.println();
+        System.out.printf("%s has been deleted.", fullName);
         System.out.println();
         System.out.println();
         selectionMenu();
