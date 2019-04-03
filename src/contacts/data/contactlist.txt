@@ -1,4 +1,3 @@
-
 Dwight
 Bemisderfer
 4646758588
@@ -17,3 +16,13 @@ Robin
 Harry
 Houdini
 8585858585
+Woody
+Woodpecker
+8848848844
+Test
+Tester
+5757575775
+Richie
+Rich
+$$$$$$$$$$
+[Contact{name='Hamburger Harry', number=8889994444}]

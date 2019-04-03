@@ -34,4 +34,11 @@ public class Contact {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public String toString() {
+        return "Contact{" +
+                "name='" + firstName + " " + lastName + "'" +
+                ", number=" + phone +
+                "}";
+    }
 }

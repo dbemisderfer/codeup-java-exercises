@@ -1,4 +1,5 @@
 package contacts;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import util.Input;
 
 import java.io.IOException;
@@ -6,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -14,6 +16,22 @@ public class ContactsManager {
     static Input input;
     static String directory = "src/contacts/data";
     static String filename = "contactlist.txt";
+    static Path dataDirectory = Paths.get(directory);
+    static Path dataFile = Paths.get(directory, filename);
+    static List<Contact> contacts = new ArrayList<>();
+    static List<String> iocontacts = new ArrayList<>();
+
+    public static void viewAllContacts() throws IOException {
+        List<String> lines = Files.readAllLines(dataFile);
+        System.out.println("Here is the contact list:");
+        for (String line : lines) {
+            System.out.println(line);
+        }
+    }
+
+    public static void searchByName() {
+
+    }
 
     public static void addContact() throws IOException {
         System.out.println("Enter first name: ");
@@ -24,6 +42,10 @@ public class ContactsManager {
         System.out.println("Enter phone number: ");
         String phoneNum = input.getString();
         System.out.printf("%s %s %s%n", firstName, lastName, phoneNum);
+        Contact newContact = new Contact(firstName, lastName, phoneNum);
+        contacts.add(newContact);
+        iocontacts.add(contacts.toString());
+        System.out.println(iocontacts);
         Path contactDirectory = Paths.get(directory);
         Path contactFile = Paths.get(directory, filename);
         if (Files.notExists(contactDirectory)) {
@@ -35,9 +57,14 @@ public class ContactsManager {
 //        List<String> lines = Files.readAllLines()
         Files.write(
                 Paths.get(directory, filename),
-                Arrays.asList(firstName, lastName, phoneNum),
+                iocontacts,
+//                Arrays.asList(firstName, lastName, phoneNum),
                 StandardOpenOption.APPEND
         );
+    }
+
+    public static void deleteContact() {
+        System.out.println();
     }
     public static void main(String[] args) {
 //        Contact contact1 = new Contact("Marty", "Henson", "1231231234");
@@ -53,6 +80,11 @@ public class ContactsManager {
         int choose = input.getInt();
         switch (choose) {
             case 1 :
+                try {
+                    viewAllContacts();
+            } catch (IOException ioe){
+                    ioe.printStackTrace();
+            }
                 break;
             case 2 :
                 try {
@@ -63,8 +95,10 @@ public class ContactsManager {
 
                 break;
             case 3 :
+                searchByName();
                 break;
             case 4 :
+                deleteContact();
                 break;
             case 5 :
 //                System.exit(0);
