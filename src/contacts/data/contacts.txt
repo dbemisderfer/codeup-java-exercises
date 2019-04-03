@@ -1,3 +1,7 @@
-[Contact{name='Dwight Bemisderfer', number=5555555555}]
-[Contact{name='Luis Robles', number=7777777777}]
-
+[Dwight Bemisderfer 5555555555]
+[Richie Rich $$$$$$$$$$]
+[Luis Robles 7777777777]
+[Daniel Fryar 8888888888]
+[Lone Ranger 3535367722]
+[Willie Williams 3332224444]
+[Harry Houdini 3030303030]

@@ -36,9 +36,10 @@ public class Contact {
     }
 
     public String toString() {
-        return "Contact{" +
-                "name='" + firstName + " " + lastName + "'" +
-                ", number=" + phone +
-                "}";
+        return firstName + " " + lastName + " " + phone;
+//        return "Contact{" +
+//                "name='" + firstName + " " + lastName + "'" +
+//                ", number=" + phone +
+//                "}";
     }
 }
