@@ -1,0 +1,3 @@
+[Contact{name='Dwight Bemisderfer', number=5555555555}]
+[Contact{name='Luis Robles', number=7777777777}]
+[Contact{name='Richie Rich', number=$$$$$$$$$$}]
