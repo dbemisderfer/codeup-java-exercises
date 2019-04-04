@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
+@SuppressWarnings("Duplicates")
 public class ContactsManager {
     static Input input;
     static String directory = "src/contacts/data";
@@ -81,42 +81,53 @@ public class ContactsManager {
     public static void viewAllContacts() throws IOException {
         int index = 0;
         contactlist = Files.readAllLines(dataFile);
-        System.out.println("Name           | Phone number     |\n" +
-                "-----------------------------------");
+        System.out.println("Name                 | Phone number     |\n" +
+                "------------------------------------------");
         for (String contact : contactlist) {
             if(contact.length() > 0) {
                 index = contact.lastIndexOf(" ");
                 String firstStr = contact.substring(0, index);
                 String lastStr = contact.substring(index + 1);
-                System.out.printf("%-14s | %-16s |%n", firstStr, lastStr);
+                System.out.printf("%-20s | %-16s |%n", firstStr, lastStr);
             }
 
         }
-//        List<String> lines = Files.readAllLines(dataFile);
-//        System.out.printf("%nHere is the contact list:%n");
-//        for (String line : lines) {
-//            System.out.println(line);
-//        }
         System.out.println();
         System.out.println();
         selectionMenu();
     }
 
     public static void addContact() throws IOException {
+        List<String> newList = new ArrayList<>();
         System.out.printf("%nEnter first name: %n");
-//        String placeholder = input.getString();
         String firstName = input.getString();
         System.out.println("Enter last name: ");
         String lastName = input.getString();
         System.out.println("Enter phone number: ");
         String phoneNum = input.getString();
+        String fullName = firstName + " " + lastName;
         phoneNum = phoneNumConverter(phoneNum);
         System.out.printf("%s %s %s%n", firstName, lastName, phoneNum);
         Contact newContact = new Contact(firstName, lastName, phoneNum);
         iocontacts.clear();
-//        contacts.add(newContact);
         iocontacts.add(newContact.toString());
-        System.out.println(iocontacts);
+
+        contactlist = Files.readAllLines(dataFile);
+        for (String contact : contactlist) {
+            if (contact.contains(fullName)) {
+                System.out.println(contact);
+                System.out.printf("There's already a contact named %s.%nDo you want to overwrite it? (Yes/No)", fullName);
+                boolean response = input.yesNo();
+                if (response) {
+                    newList.add("");
+                    continue;
+                }
+
+            }
+            newList.add(contact);
+        }
+        Files.write(dataFile, newList);
+
         Path contactDirectory = Paths.get(directory);
         Path contactFile = Paths.get(directory, filename);
         if (Files.notExists(contactDirectory)) {
@@ -128,7 +139,6 @@ public class ContactsManager {
         Files.write(
                 Paths.get(directory, filename),
                 iocontacts,
-//                Arrays.asList(firstName, lastName, phoneNum),
                 StandardOpenOption.APPEND
         );
         System.out.println();
@@ -147,6 +157,7 @@ public class ContactsManager {
         for(String contact : contacts){
 //            System.out.println(contact);
             if(contact.contains(fullName)){
+                System.out.println("\n");
                 System.out.println(contact);
             }
         }
@@ -182,19 +193,11 @@ public class ContactsManager {
     }
 
     public static void main(String[] args) {
-//        Contact contact1 = new Contact("Marty", "Henson", "1231231234");
-//        System.out.printf("%s %s %s%n", contact1.getFirstName(), contact1.getLastName(), contact1.getPhone());
+
         input = new Input();
         selectionMenu();
-//        System.out.println("Enter a string: ");
-//        String test = input.getString();
-//        System.out.println(test);
-//        int index = test.lastIndexOf(" ");
-//        String firstStr = test.substring(0, index);
-//        String lastStr = test.substring(index + 1);
-//        System.out.println("Name           | Phone number     |\n" +
-//                "-----------------------------------");
-//        System.out.printf("%-14s | %-16s |", firstStr, lastStr);
+
+
 
 
     }

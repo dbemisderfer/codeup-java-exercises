@@ -51,7 +51,7 @@ public class Input {
         try {
             returnInteger = Integer.valueOf(userInput);
         } catch (NumberFormatException nfe) {
-            System.out.println(nfe);
+//            System.out.println(nfe);
             return getInt();
         }
         return returnInteger;
