@@ -79,10 +79,18 @@ public class ContactsManager {
     }
 
     public static void viewAllContacts() throws IOException {
+        int index = 0;
         contactlist = Files.readAllLines(dataFile);
+        System.out.println("Name           | Phone number     |\n" +
+                "-----------------------------------");
         for (String contact : contactlist) {
-            if(contact.length() > 0)
-                System.out.println(contact);
+            if(contact.length() > 0) {
+                index = contact.lastIndexOf(" ");
+                String firstStr = contact.substring(0, index);
+                String lastStr = contact.substring(index + 1);
+                System.out.printf("%-14s | %-16s |%n", firstStr, lastStr);
+            }
+
         }
 //        List<String> lines = Files.readAllLines(dataFile);
 //        System.out.printf("%nHere is the contact list:%n");
@@ -181,9 +189,12 @@ public class ContactsManager {
 //        System.out.println("Enter a string: ");
 //        String test = input.getString();
 //        System.out.println(test);
-//        System.out.println(test.substring(0, 3) + "-" + test.substring(3, 6) + "-" + test.substring(6));
-//        System.out.println(test.substring(3, 6));
-//        System.out.println(test.substring(6));
+//        int index = test.lastIndexOf(" ");
+//        String firstStr = test.substring(0, index);
+//        String lastStr = test.substring(index + 1);
+//        System.out.println("Name           | Phone number     |\n" +
+//                "-----------------------------------");
+//        System.out.printf("%-14s | %-16s |", firstStr, lastStr);
 
 
     }
