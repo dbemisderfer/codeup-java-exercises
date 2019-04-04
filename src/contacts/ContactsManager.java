@@ -20,6 +20,16 @@ public class ContactsManager {
     static List<String> iocontacts = new ArrayList<>();
     static List<String> contactlist;
 
+    public static String phoneNumConverter(String phoneNum) {
+        if (phoneNum.length() == 10) {
+            phoneNum = phoneNum.substring(0, 3) + "-" + phoneNum.substring(3, 6) + "-" + phoneNum.substring(6);
+        }
+        if (phoneNum.length() == 7) {
+            phoneNum = phoneNum.substring(0, 3) + "-" + phoneNum.substring(3);
+        }
+        return phoneNum;
+    }
+
     public static void selectionMenu() {
         System.out.println("1. View contacts.\n" +
                 "2. Add a new contact.\n" +
@@ -92,6 +102,7 @@ public class ContactsManager {
         String lastName = input.getString();
         System.out.println("Enter phone number: ");
         String phoneNum = input.getString();
+        phoneNum = phoneNumConverter(phoneNum);
         System.out.printf("%s %s %s%n", firstName, lastName, phoneNum);
         Contact newContact = new Contact(firstName, lastName, phoneNum);
         iocontacts.clear();
@@ -167,6 +178,13 @@ public class ContactsManager {
 //        System.out.printf("%s %s %s%n", contact1.getFirstName(), contact1.getLastName(), contact1.getPhone());
         input = new Input();
         selectionMenu();
+//        System.out.println("Enter a string: ");
+//        String test = input.getString();
+//        System.out.println(test);
+//        System.out.println(test.substring(0, 3) + "-" + test.substring(3, 6) + "-" + test.substring(6));
+//        System.out.println(test.substring(3, 6));
+//        System.out.println(test.substring(6));
+
 
     }
 }
