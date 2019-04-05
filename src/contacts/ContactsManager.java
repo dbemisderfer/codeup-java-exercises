@@ -20,6 +20,7 @@ public class ContactsManager {
     static List<String> iocontacts = new ArrayList<>();
     static List<String> contactlist;
 
+
     public static String phoneNumConverter(String phoneNum) {
         if (phoneNum.length() == 10) {
             phoneNum = phoneNum.substring(0, 3) + "-" + phoneNum.substring(3, 6) + "-" + phoneNum.substring(6);
@@ -34,16 +35,15 @@ public class ContactsManager {
         System.out.println("1. View contacts.\n" +
                 "2. Add a new contact.\n" +
                 "3. Search a contact by name.\n" +
-                "4. Delete an existing contact.\n" +
-                "5. Exit.\n" +
+                "4. Edit contact name.\n" +
+                "5. Delete an existing contact.\n" +
+                "6. Exit.\n" +
                 "Enter an option (1, 2, 3, 4 or 5): ");
         int choose = input.getInt();
         switch (choose) {
             case 1 :
                 try {
                     viewAllContacts();
-                } catch (NoSuchFileException nsfe){
-                    nsfe.printStackTrace();
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
                 }
@@ -66,13 +66,21 @@ public class ContactsManager {
                 break;
             case 4 :
                 try {
-                    deleteContact();
+                    editContact();
                 } catch (IOException ioe){
                     ioe.printStackTrace();
                 }
 
                 break;
             case 5 :
+                try {
+                    deleteContact();
+                } catch (IOException ioe){
+                    ioe.printStackTrace();
+                }
+
+                break;
+            case 6 :
 //                System.exit(0);
                 return;
         }
@@ -166,6 +174,29 @@ public class ContactsManager {
         selectionMenu();
     }
 
+    public static void editContact() throws IOException {
+        System.out.println("Enter contact name to edit: ");
+        String userEdit = input.getString();
+        System.out.println("Enter new contact name: ");
+        String newName = input.getString();
+        List<String> newList = new ArrayList<>();
+        List<String> contacts = Files.readAllLines(dataFile);
+        for (String line : contacts) {
+            if (line.contains(userEdit)) {
+                newName = line.replaceFirst(userEdit, newName);
+                newList.add(newName);
+                continue;
+            }
+            newList.add(line);
+        }
+        Files.write(dataFile, newList);
+        System.out.println();
+        selectionMenu();
+    }
+
+
+
+
     public static void deleteContact() throws IOException {
         System.out.println("You have requested the deletion of a contact...");
         System.out.printf("%nEnter a first name: %n");
@@ -192,12 +223,44 @@ public class ContactsManager {
         selectionMenu();
     }
 
+
+
     public static void main(String[] args) {
 
         input = new Input();
-        selectionMenu();
+//        selectionMenu();
 
-
+        try {
+            System.out.println("Enter contact name to edit: ");
+            String userEdit = input.getString();
+            System.out.println("Enter new contact name: ");
+            String newName = input.getString();
+            List<String> newList = new ArrayList<>();
+            System.out.println("This is newList: " + newList);
+            List<String> contacts = Files.readAllLines(dataFile);
+            System.out.println("This is contacts: " + contacts);
+            for (String line : contacts) {
+                if (line.contains(userEdit)) {
+                    newName = line.replaceFirst(userEdit, newName);
+                    System.out.println("This is newName: " + newName);
+                    newList.add(newName);
+                    System.out.println("This is newList, again: " + newList);
+                    continue;
+                }
+                newList.add(line);
+                System.out.println("newList one more time: " + newList);
+            }
+            Files.write(dataFile, newList);
+            System.out.println("This is dataFile: " + dataFile);
+            List<String> lines = Files.readAllLines(dataFile);
+            for (String line : lines) {
+                System.out.println(line);
+            }
+//            System.out.println(lines);
+            System.out.println();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
 
 
     }
