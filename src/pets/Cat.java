@@ -40,6 +40,8 @@ public class Cat extends Animal {
             System.out.println("Weight: " + kat.getWeight());
         }
 
+
+
 //        cat.sleep();             // Cat method
 //        cat.eat("hotdog"); // Cat method
 //        System.out.println();
