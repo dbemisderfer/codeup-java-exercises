@@ -14,25 +14,24 @@ public class SandboxPushups {
 //            fibo(n2, newNumber, length, ++count);
 //        }
 //    }
-//    public static boolean findThePalindrome(String word) {
-////        boolean test = false;
-//        String testWord = word;
-//        String reverse = new StringBuffer(testWord).reverse().toString();
-//        return testWord.equalsIgnoreCase(reverse);
-////        if (testWord.equalsIgnoreCase(reverse)) {
-////            return true;
-////        }
-////        return false;
-//
-//
-////        boolean test = false;
-////        char[] wordArray = {};
-////        char[] reverseWordArray = {};
-////        wordArray = word.toCharArray();
-//////        reverseWordArray = wordArray
-////        return wordArray.length;
-//
-//    }
+    public static boolean findThePalindrome(String word) {
+
+        StringBuffer reverse = new StringBuffer(word).reverse();
+        return word.equalsIgnoreCase(reverse.toString());
+//        if (testWord.equalsIgnoreCase(reverse)) {
+//            return true;
+//        }
+//        return false;
+
+
+//        boolean test = false;
+//        char[] wordArray = {};
+//        char[] reverseWordArray = {};
+//        wordArray = word.toCharArray();
+////        reverseWordArray = wordArray
+//        return wordArray.length;
+
+    }
 
     public static void main(String[] args) {
 
@@ -57,7 +56,7 @@ public class SandboxPushups {
 //        fibo(0, 1, 10, 2)
 //        System.out.print("0 ");
 //        fibo(-1, 0, 11, 2);
-//        System.out.println(findThePalindrome("hello"));
+        System.out.println(findThePalindrome("hello"));
 
 //        String word = "hello";
 //        String reverse = new StringBuffer(word).reverse().toString();
