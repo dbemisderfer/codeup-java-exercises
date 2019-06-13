@@ -16,12 +16,12 @@ public class Square extends Quadrilateral { //implements Measurable by default (
         this.width = width;
     }
 
-    public double getArea() {
-        return (this.length * this.length);
-    }
-
     public double getPerimeter() {
         return (4 * this.length);
+    }
+
+    public double getArea() {
+        return (this.length * this.length);
     }
 
     //public class Square extends Rectangle {

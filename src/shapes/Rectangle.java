@@ -6,6 +6,14 @@ public class Rectangle extends Quadrilateral implements Measurable {
         super(length, width);
     }
 
+    public void setLength() {
+        this.length = length;
+    }
+
+    public void setWidth() {
+        this.width = width;
+    }
+
     public double getPerimeter() {
         return (2 * this.length) + (2 * this.width);
     }
@@ -18,14 +26,6 @@ public class Rectangle extends Quadrilateral implements Measurable {
 //    public void setLength(String key) {
 //        this.length = length;
 //    }
-
-        public void setLength() {
-        this.length = length;
-    }
-
-    public void setWidth() {
-        this.width = width;
-    }
 
     //    protected int length;
 //    protected int width;
