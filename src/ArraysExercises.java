@@ -21,8 +21,8 @@ public class ArraysExercises {
 
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
-//        System.out.println(Arrays.toString(numbers));
-        System.out.println(Arrays.toString(numbers));
+//        System.out.println(numbers); //only prints out object location
+        System.out.println(Arrays.toString(numbers)); //prints out array correctly
 //        Person p1 = new Person("Teresa");
 //        Person p2 = new Person("Alexis");
 //        Person p3 = new Person("Noah");
